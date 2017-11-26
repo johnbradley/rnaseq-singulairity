@@ -1,6 +1,12 @@
-Bootstrap: docker
-From: ubuntu:16.04
+Bootstrap: yum
+OSVersion: 7
+MirrorURL: http://mirror.centos.org/centos-%{OSVERSION}/%{OSVERSION}/os/$basearch/ 
+Include: yum
 
-% runscript
+%runscript
+    echo "This is what happens when you run the container..."
 
-exec echo Hello "$@"
+
+%post
+    echo "Hello from inside the container"
+    yum -y install vim-minimal
