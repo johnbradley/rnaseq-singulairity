@@ -12,5 +12,6 @@ Include: yum
     yum -y update
     yum -y install vim-minimal bzip2-devel sqlite-devel xz-devel tk-devel gdbm-devel readline-devel openssl-devel git vim wget gcc make bzip2 patch gcc-c++
     wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
-    bash Miniconda3-latest-Linux-x86_64.sh -b
-    #conda install -c bioconda fastqc
+    bash Miniconda3-latest-Linux-x86_64.sh -b -p /opt/miniconda
+    export PATH="/opt/miniconda/bin:$PATH"
+    conda install -c bioconda fastqc
